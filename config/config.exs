@@ -27,7 +27,7 @@ config :logger, :console,
 import_config "#{Mix.env}.exs"
 
 config :ueberauth, Ueberauth,
-  provider: [
-    github: { Ueberauth.Strategy.Github, [] }
+  providers: [
+    github: { Ueberauth.Strategy.Github, [default_scope: "user:email"] }
   ]
 
